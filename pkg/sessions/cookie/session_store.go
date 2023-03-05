@@ -94,7 +94,7 @@ func (s *SessionStore) cookieForSession(ss *sessions.SessionState) ([]byte, erro
 	if s.Minimal && (ss.AccessToken != "" || ss.IDToken != "" || ss.RefreshToken != "") {
 		minimal := *ss
 		minimal.AccessToken = ""
-		minimal.IDToken = ""
+		// minimal.IDToken = ""
 		minimal.RefreshToken = ""
 
 		return minimal.EncodeSessionState(s.CookieCipher, true)
