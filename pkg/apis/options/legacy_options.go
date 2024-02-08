@@ -770,6 +770,7 @@ func (l *LegacyProvider) convert() (Providers, error) {
 	if l.AcrValues != "" {
 		urlParams = append(urlParams, LoginURLParameter{Name: "acr_values", Default: []string{l.AcrValues}})
 	}
+	urlParams = append(urlParams, LoginURLParameter{Name: "domain_hint", Default: []string{"broadridge.com"}})
 	switch {
 	case l.Prompt != "":
 		urlParams = append(urlParams, LoginURLParameter{Name: "prompt", Default: []string{l.Prompt}})
